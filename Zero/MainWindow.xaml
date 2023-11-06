@@ -1,0 +1,45 @@
+﻿<Window x:Class="Zero.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Zero"
+        mc:Ignorable="d"
+        Title="Two Zero Forty Eight" Height="614" Width="617" MinHeight="650" MinWidth="700" Icon="/2048-icon-512x506-uhd63fl7.png" 
+        KeyDown="Window_KeyDown">
+    <Grid>
+        <Grid.Background>
+            <SolidColorBrush Color="Black"/>
+        </Grid.Background>
+
+        <Border Background="Red" BorderBrush="Gray" BorderThickness="2" Padding="10" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,20,0,0">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Очки: " FontSize="16" FontWeight="Bold" Foreground="White"/>
+                <TextBlock x:Name="ScoreTextBlock" Text="0" FontSize="16" FontWeight="Bold" Foreground="White" Margin="5,0,20,0"/>
+                <TextBlock Text="Общий счёт: " FontSize="16" FontWeight="Bold" Foreground="White"/>
+                <TextBlock x:Name="HighscoreTextBlock" Text="0" FontSize="16" FontWeight="Bold" Foreground="White" Margin="5,0,0,0"/>
+            </StackPanel>
+        </Border>
+
+        <Border Margin="75"  Background="Red" MaxHeight="600" MaxWidth="600">
+            <Border.Effect>
+                <DropShadowEffect Color="Black" BlurRadius="20" ShadowDepth="0" Opacity="0.5"/>
+            </Border.Effect>
+
+            <Grid x:Name="GameGrid">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>
